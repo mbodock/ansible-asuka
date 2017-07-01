@@ -1,0 +1,9 @@
+- name: Instala tmux
+  apt:
+    name: tmux
+    state: latest
+
+- name: Configura tmux
+  template:
+    src: templates/tmux.conf.j2
+    dest: ~/.tmux.conf

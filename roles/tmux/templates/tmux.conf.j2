@@ -1,0 +1,47 @@
+# UTF-8
+set -g status-utf8 on
+# disable status bar
+set -g status off
+
+# set scrollback history to 10000 (10k)
+set -g history-limit 10000
+
+# set window and pane index to 1 (0 by default)
+set-option -g base-index 1
+setw -g pane-base-index 1
+
+# map Vi movement keys as pane movement keys
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# tmux com 256 cores
+set -g default-terminal "screen-256color"
+
+set-window-option -g mode-keys vi
+bind-key -t vi-copy 'v' begin-selection
+# bind-key -t vi-copy 'y' copy-selection
+bind -t vi-copy y copy-pipe 'xclip -in -selection clipboard'
+
+# Use Alt-arrow keys without prefix key to switch panes
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# reload ~/.tmux.conf using PREFIX r
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+# Register ctrl+b shift+d to load default layout
+bind g source-file ~/.tmux/default_layout
+
+# remove vim esc delay
+set -sg escape-time 0
+
+# split window and fix path for tmux 1.9
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
+
+unbind-key C-z
