@@ -1,0 +1,40 @@
+- name: Instala Vim
+  apt:
+    name: vim-gtk
+    state: latest
+
+- name: Instala git
+  apt:
+    name: git
+    state: present
+
+- name: Instala Vundle
+  git:
+    repo: https://github.com/VundleVim/Vundle.vim.git
+    dest: ~/.vim/bundle/Vundle.vim
+    update: no
+
+- name: Configura Vim
+  template:
+    src: templates/vimrc.j2
+    dest: ~/.vimrc
+
+- name: Cria pastas fontes
+  file:
+    path: "{{ item.dest }}"
+    state: directory
+  with_items:
+    - "{{ fonts }}"
+
+- name: Instala fonts
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}{{ item.nome}}"
+  with_items:
+    - "{{ fonts }}"
+
+- name: Constrói cache de fonts
+  shell: fc-cache -vf ~/.fonts/
+
+- name: Instala plugins Vim
+  shell: "vim +PluginInstall +qall"
