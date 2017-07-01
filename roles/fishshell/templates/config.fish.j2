@@ -75,4 +75,7 @@ end
 
 # Por fim abre o tmux
 # opção -2 para abrir em 256 cores
-tmux -2
+# Não abre o tmux se conectado via SSH
+if test -z "$SSH_CLIENT"
+    tmux -2
+end
