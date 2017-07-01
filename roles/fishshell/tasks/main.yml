@@ -1,0 +1,17 @@
+- name: Instala fish shell
+  apt:
+      name: fish
+      install_recommends: yes
+
+- name: Cria pasta de configurações
+  file:
+      path: ~/.config/fish/
+      state: directory
+
+- name: Configura fish
+  template:
+      src: templates/config.fish.j2
+      dest: ~/.config/fish/config.fish
+
+- name: Define fish como shell padrao
+  shell: chsh -s `which fish`
