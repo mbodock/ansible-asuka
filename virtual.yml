@@ -1,8 +1,13 @@
 - hosts: local
   remote_user: root
+  vars:
+    nome: Marcus Vinicius (Mbodock)
+    email: mbodock@gmail.com
+    signkey: 28EF91D5
   roles:
       - pacotes
       - tmux
       - fishshell
       - scripts
       - vim
+      - git
