@@ -1,6 +1,7 @@
 - hosts: local
   remote_user: root
   vars:
+    # Altere para seus dados
     nome: Marcus Vinicius (Mbodock)
     email: mbodock@gmail.com
     signkey: 28EF91D5

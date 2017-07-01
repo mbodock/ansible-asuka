@@ -1,0 +1,7 @@
+arquivos_scripts:
+  - src: templates/performance.sh.j2
+    dest: performance.sh
+  - src: templates/powersave.sh.j2
+    dest: powersave.sh
+  - src: templates/reset-wireless.sh.j2
+    dest: reset-wireless.sh
