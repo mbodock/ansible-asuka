@@ -1,0 +1,28 @@
+- name: Cria pasta bin na home
+  file:
+    path: ~/bin
+    state: directory
+
+- name: Instala cpufrequtils
+  apt:
+    name: cpufrequtils
+    state: present
+
+- name: Adiciona comando perfomance
+  template:
+    src: templates/performance.sh.j2
+    dest: ~/bin/performance.sh
+    mode: 0755
+
+- name: Adiciona comando powersave
+  template:
+    src: templates/powersave.sh.j2
+    dest: ~/bin/powersave.sh
+    mode: 0755
+
+- name: Adiciona comando resetwireless
+  template:
+    src: templates/reset-wireless.sh.j2
+    dest: ~/bin/reset-wireless.sh
+    mode: 0755
+
