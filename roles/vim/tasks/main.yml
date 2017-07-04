@@ -2,11 +2,13 @@
   apt:
     name: vim-gtk
     state: latest
+  become: yes
 
 - name: Instala git
   apt:
     name: git
     state: present
+  become: yes
 
 - name: Instala Vundle
   git:

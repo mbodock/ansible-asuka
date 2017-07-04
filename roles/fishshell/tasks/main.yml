@@ -2,6 +2,7 @@
   apt:
       name: fish
       install_recommends: yes
+  become: yes
 
 - name: Cria pasta de configurações
   file:
@@ -14,4 +15,7 @@
       dest: ~/.config/fish/config.fish
 
 - name: Define fish como shell padrao
-  shell: chsh -s `which fish`
+  user:
+     name: "{{ ansible_ssh_user }}"
+     shell: /usr/bin/fish
+  become: yes

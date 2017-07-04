@@ -1,0 +1,54 @@
+- name: Adicoina chave para o arc-theme
+  apt_key:
+    url: http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
+    state: present
+  become: yes
+
+- name: Adiciona repo de icons
+  apt_repository:
+    repo: "{{ item }}"
+  with_items:
+    - deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /
+    - 'ppa:moka/daily'
+  become: yes
+
+- name: Instala pacotes
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - arandr
+    - xbacklight
+    - lxappearance
+    - thunar
+    - numlockx
+    - rofi
+    - compton
+    - arandr
+    - i3blocks
+    - pavucontrol
+    - feh
+    # Removido por chave expirada
+    # - arc-theme
+    - moka-icon-theme
+    - faba-icon-theme
+    - faba-mono-icons
+  become: yes
+
+- include: fonts.yml
+
+- name: Cria pasta de configração do i3 se necessário
+  file:
+    path: ~/.config/i3/
+    recurse: true
+    state: directory
+
+- name: Copia configurações i3
+  copy:
+    src: files/i3.conf
+    dest: ~/.config/i3/config
+
+- name: Copia configurações do i3-blocks
+  copy:
+    src: files/i3blocks.conf
+    dest: ~/.config/i3/i3blocks.conf
