@@ -8,3 +8,40 @@
   apt:
       upgrade: dist
   become: yes
+
+- name: Adiciona repositórios
+  apt_repository:
+    repo: 'ppa:nathan-renniewaldock/flux'
+    state: present
+  become: yes
+
+- name: Instala pacotes diários
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: yes
+  with_items:
+    - aptitude
+    - blueman
+    - csvtool
+    - dos2unix
+    - etckeeper
+    - flake8
+    - fluxgui
+    - gitg
+    - gitinspector
+    - gitk
+    - glances
+    - htop
+    - iotop
+    - lm-sensors
+    - mplayer
+    - mysql-workbench
+    - openvpn
+    - parcellite
+    - qbittorrent
+    - ranger
+    - recordmydesktop
+    - vagrant
+    - xclip
+    - zram-config
