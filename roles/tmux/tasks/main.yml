@@ -2,6 +2,7 @@
   apt:
     name: tmux
     state: latest
+  become: true
 
 - name: Configura tmux
   template:
