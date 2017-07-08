@@ -1,4 +1,4 @@
-- name: Adicoina chave para o arc-theme
+- name: Adiciona chave para o arc-theme
   apt_key:
     url: http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
     state: present
@@ -60,7 +60,7 @@
     src: files/i3blocks.conf
     dest: ~/.config/i3/i3blocks.conf
 
-- name: Copia scripts do i3-blockis
+- name: Copia scripts do i3-blocks
   copy:
     src: "{{ item }}"
     dest: /usr/share/i3blocks/
