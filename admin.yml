@@ -4,4 +4,6 @@
   remote_user: bodock
   become: true
   roles:
-    - docker
+    - role: docker
+      docker_install_compose: true
+      docker_compose_version: "1.14.0"
