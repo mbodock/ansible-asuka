@@ -1,0 +1,7 @@
+---
+# Paybook que deve ser executado como root
+- hosts: local
+  remote_user: bodock
+  become: true
+  roles:
+    - docker
