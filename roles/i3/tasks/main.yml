@@ -48,7 +48,24 @@
     src: files/i3.conf
     dest: ~/.config/i3/config
 
+- name: Cria pasta de blocks se necessário
+  file:
+    path: /usr/share/i3blocks
+    recurse: true
+    state: directory
+  become: yes
+
 - name: Copia configurações do i3-blocks
   copy:
     src: files/i3blocks.conf
     dest: ~/.config/i3/i3blocks.conf
+
+- name: Copia scripts do i3-blockis
+  copy:
+    src: "{{ item }}"
+    dest: /usr/share/i3blocks/
+    owner: root
+    mode: 0755
+  become: yes
+  with_fileglob:
+    - "files/blocks/*"

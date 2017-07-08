@@ -1,0 +1,5 @@
+#!/bin/bash
+dados=$(lscpu | grep MHz | head -1 | cut -d':' -f 2 | tr -d '[:space:]' | cut -d'.' -f1)
+divisor=1000
+echo -n $(py "$dados / $divisor")
+echo "GHz"

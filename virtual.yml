@@ -12,5 +12,10 @@
       - scripts
       - vim
       - git
-      - docker
       - i3
+
+- hosts: local
+  remote_user: bodock
+  become: true
+  roles:
+      - docker
