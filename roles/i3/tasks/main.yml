@@ -26,6 +26,8 @@
     - compton
     - arandr
     - i3blocks
+    - scrot
+    - i3lock
     - pavucontrol
     - feh
     # Removido por chave expirada

@@ -38,6 +38,7 @@
     - mplayer
     - mysql-workbench
     - openvpn
+    - pulseaudio-module-bluetooth
     - parcellite
     - qbittorrent
     - ranger
@@ -45,3 +46,4 @@
     - vagrant
     - xclip
     - zram-config
+    - tree

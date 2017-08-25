@@ -1,5 +1,5 @@
 - hosts: local
-  remote_user: bodock
+  remote_user: mbodock
   vars:
     # Altere para seus dados
     nome: Marcus Vinicius (Mbodock)
