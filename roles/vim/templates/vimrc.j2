@@ -16,6 +16,7 @@ set shell=bash
 
 "Plugin list to Vundle
 
+Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -23,8 +24,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'chase/vim-ansible-yaml'
-Plugin 'dag/vim-fish'
 Plugin 'dkprice/vim-easygrep'
+Plugin 'dag/vim-fish'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
@@ -53,7 +54,7 @@ call vundle#end()
 filetype plugin indent on    " required
 
 set wildmenu                    " shows menu when tab is pressed
-set wildignore=*/htmlcov/*,*/functional*,*.swp,*.bak,*.pyc,*.class,*/node_modules/*
+set wildignore=*/htmlcov/*,*/functional*,*.swp,*.bak,*.pyc,*.class,*/node_modules/*,*/bower_components/*
 set title                       " change the terminal's title
 set cursorline                  " Highline the current line
 set cc=80
