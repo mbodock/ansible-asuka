@@ -17,3 +17,8 @@
     mode: 0755
   with_items:
     - "{{ arquivos_scripts }}"
+
+- name: Adiciona fishenv
+  git:
+    repo: git@github.com:mbodock/FishEnv.git
+    dest: "~/bin/fishenv"
