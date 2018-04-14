@@ -1,4 +1,14 @@
 ---
+- name: Adiciona repositórios
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+  become: yes
+  with_items:
+    - ppa:nathan-renniewaldock/flux
+    - ppa:jonathonf/vim
+    - ppa:fossfreedom/arc-gtk-theme-daily
+
 - name: Atualizar cache
   apt:
     update_cache: yes
@@ -10,21 +20,13 @@
     upgrade: dist
   become: yes
 
-- name: Adiciona repositórios
-  apt_repository:
-    repo: "{{ item }}"
-    state: present
-  become: yes
-  with_items:
-    - ppa:nathan-renniewaldock/flux
-    - ppa:jonathonf/vim
-
 - name: Instala pacotes diários
   apt:
     name: "{{ item }}"
     state: present
   become: yes
   with_items:
+    - arc-theme
     - aptitude
     - blueman
     - csvtool
