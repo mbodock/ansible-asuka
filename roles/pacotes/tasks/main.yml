@@ -12,9 +12,12 @@
 
 - name: Adiciona repositórios
   apt_repository:
-    repo: 'ppa:nathan-renniewaldock/flux'
+    repo: "{{ item }}"
     state: present
   become: yes
+  with_items:
+    - ppa:nathan-renniewaldock/flux
+    - ppa:jonathonf/vim
 
 - name: Instala pacotes diários
   apt:
@@ -47,5 +50,6 @@
     - recordmydesktop
     - tree
     - vagrant
+    - vim
     - xclip
     - zram-config
