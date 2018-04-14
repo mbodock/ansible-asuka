@@ -50,8 +50,10 @@
     - qbittorrent
     - ranger
     - recordmydesktop
+    - shellcheck
     - tree
     - vagrant
     - vim
     - xclip
+    - yamllint
     - zram-config
