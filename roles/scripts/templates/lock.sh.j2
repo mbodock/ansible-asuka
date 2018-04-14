@@ -1,0 +1,17 @@
+#!/bin/bash
+icon="$HOME/Pictures/icons/lock.png"
+img="/dev/shm/screen.png"
+scrot $img
+largura=$(identify -format %w $img)
+altura=$(identify -format %h $img)
+offseth=$(identify -format %w "$icon")
+offsetv=$(identify -format %h "$icon")
+ponto1=$(py "(($largura/4) - $offseth)")
+ponto2=$(py "(($largura / 4 * 3) - $offseth)")
+altura=$(py "$altura/2 - $offsetv/2")
+convert $img -scale 10% -scale 1000% $img
+convert $img "$icon" -geometry +"$ponto1"+"$altura" -composite -matte $img
+convert $img "$icon" -geometry +"$ponto2"+"$altura" -composite -matte $img
+[[ -f "$1" ]] && convert $img "$1" -gravity center -composite -matte $img
+i3lock -u -i $img
+rm $img

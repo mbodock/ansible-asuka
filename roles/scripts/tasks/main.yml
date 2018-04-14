@@ -1,3 +1,4 @@
+---
 - name: Cria pasta bin na home
   file:
     path: ~/bin

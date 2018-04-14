@@ -1,3 +1,4 @@
+---
 arquivos_scripts:
   - src: templates/performance.sh.j2
     dest: performance.sh
@@ -5,3 +6,5 @@ arquivos_scripts:
     dest: powersave.sh
   - src: templates/reset-wireless.sh.j2
     dest: reset-wireless.sh
+  - src: templates/lock.sh.j2
+    dest: lock.sh
