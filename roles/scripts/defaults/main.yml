@@ -8,3 +8,5 @@ arquivos_scripts:
     dest: reset-wireless.sh
   - src: templates/lock.sh.j2
     dest: lock.sh
+  - src: templates/bodockshot.j2
+    dest: lock.sh

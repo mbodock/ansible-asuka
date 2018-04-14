@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Tira print de uma região selecionada da tela e a copia
+# para o clipboard
+#
+# Requisitos:
+#   - scrot
+#   - xclip
+
+notify-send "Selecione a area desejada"
+scrot -s /dev/shm/screenshot.png
+sleep 0.1
+xclip -selection clipboard -t image/png -i /dev/shm/screenshot.png
