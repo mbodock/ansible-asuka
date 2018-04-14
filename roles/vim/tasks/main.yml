@@ -1,6 +1,7 @@
+---
 - name: Instala Vim
   apt:
-    name: vim-gtk
+    name: vim
     state: latest
   become: yes
 
@@ -15,11 +16,6 @@
     repo: https://github.com/VundleVim/Vundle.vim.git
     dest: ~/.vim/bundle/Vundle.vim
     update: no
-
-- name: Configura Vim
-  template:
-    src: templates/vimrc.j2
-    dest: ~/.vimrc
 
 - name: Cria pastas fontes
   file:

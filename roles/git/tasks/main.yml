@@ -3,8 +3,3 @@
     name: git
     state: present
   become: yes
-
-- name: Copia configurações do git
-  template:
-    src: templates/gitconfig.j2
-    dest: ~/.gitconfig

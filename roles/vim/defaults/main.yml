@@ -1,3 +1,4 @@
+---
 fonts:
   - dest: ~/.fonts/
     nome: PowerlineSymbols.otf

@@ -6,11 +6,12 @@
     email: mbodock@gmail.com
     signkey: 28EF91D5
   roles:
-      - pacotes
-      - tmux
-      - fishshell
-      - scripts
-      - vim
-      - git
-      - i3
-      - spotify
+    - pacotes
+    - dotfiles
+    - tmux
+    - fishshell
+    - scripts
+    - vim
+    - git
+    - i3
+    - spotify
