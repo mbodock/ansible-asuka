@@ -1,12 +1,13 @@
+---
 - name: Atualizar cache
   apt:
-      update_cache: yes
-      cache_valid_time: 3600
+    update_cache: yes
+    cache_valid_time: 3600
   become: yes
 
 - name: Atualizar pacotes
   apt:
-      upgrade: dist
+    upgrade: dist
   become: yes
 
 - name: Adiciona repositórios
@@ -38,12 +39,13 @@
     - mplayer
     - mysql-workbench
     - openvpn
-    - pulseaudio-module-bluetooth
     - parcellite
+    - playerctl
+    - pulseaudio-module-bluetooth
     - qbittorrent
     - ranger
     - recordmydesktop
+    - tree
     - vagrant
     - xclip
     - zram-config
-    - tree
