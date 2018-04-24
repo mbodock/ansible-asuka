@@ -18,9 +18,9 @@ Primeiro baixe as roles pelo galaxy:
 
 Em seguida execute o playbook
 
-`ansible-playbook playbook.yml -i inventory.ini -k`
+`ansible-playbook playbook.yml -i inventory.ini --ask-become-pass`
 
-> A opção `-k` para definir a senha usauda para torna-se root
+> A opção `--ask-become-pass` para definir a senha usada para torna-se root
 >
 > Lembre-se de conferir se o hosts está correto de acordo com suas necessidades
 
