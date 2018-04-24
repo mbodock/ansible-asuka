@@ -2,6 +2,7 @@
 - name: Clona dotfiles
   git:
     repo: git@github.com:mbodock/dotfiles.git
+    accept_hostkey: true
     dest: ~/.dotfiles/
     update: yes
 
