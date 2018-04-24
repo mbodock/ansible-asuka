@@ -64,3 +64,5 @@
   with_items:
     - name: slack
       url: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.1.1-amd64.deb
+    - name: playerctl
+      url: https://github.com/acrisci/playerctl/releases/download/v0.6.0/playerctl-0.6.0_amd64.deb
