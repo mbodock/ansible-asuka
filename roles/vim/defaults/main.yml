@@ -5,7 +5,7 @@ fonts:
     url: "https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf"
   - dest: ~/.fonts/
     nome: fontawesome-webfont.ttf
-    url: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/fonts/fontawesome-webfont.ttf"
+    url: "https://github.com/FortAwesome/Font-Awesome/blob/fa-4/fonts/fontawesome-webfont.ttf?raw=true"
   - dest: ~/.config/fontconfig/conf.d/
     nome: 10-powerline-symbols.conf
     url: "https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf"
