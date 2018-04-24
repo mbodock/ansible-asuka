@@ -6,6 +6,11 @@
     dest: ~/.dotfiles/
     update: yes
 
+- name: cria diretórios necessários
+  file:
+    path: ~/.config/fish
+    state: directory
+
 - name: Linka arquivos
   file:
     src: ~/.dotfiles/{{ item.src }}
