@@ -9,4 +9,4 @@ arquivos_scripts:
   - src: templates/lock.sh.j2
     dest: lock.sh
   - src: templates/bodockshot.j2
-    dest: lock.sh
+    dest: bodockshot
