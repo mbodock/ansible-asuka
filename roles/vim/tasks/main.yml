@@ -24,12 +24,18 @@
   with_items:
     - "{{ fonts }}"
 
-- name: Instala fonts
+- name: Copia fonts
   get_url:
     url: "{{ item.url }}"
     dest: "{{ item.dest }}{{ item.nome}}"
   with_items:
     - "{{ fonts }}"
+
+- name: Baixa fonts de icons
+  unarchive:
+    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Inconsolata.zip
+    dest: ~/.fonts/
+    remote_src: yes
 
 - name: Constrói cache de fonts
   shell: fc-cache -vf ~/.fonts/
