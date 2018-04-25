@@ -53,6 +53,7 @@
     - tree
     - vagrant
     - vim
+    - virtualenv
     - xclip
     - yamllint
     - zram-config

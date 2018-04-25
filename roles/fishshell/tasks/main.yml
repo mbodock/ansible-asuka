@@ -9,11 +9,6 @@
       path: ~/.config/fish/
       state: directory
 
-- name: Configura fish
-  template:
-      src: templates/config.fish.j2
-      dest: ~/.config/fish/config.fish
-
 - name: Define fish como shell padrao
   user:
      name: "{{ ansible_ssh_user }}"
